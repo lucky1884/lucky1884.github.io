@@ -1,0 +1,32 @@
+<!DOCTYPE html> <html> <head> <title>Your Page Title</title> </head> <body> <h1>This is a Heading</h1> <p>This is a paragraph.</p> </body> </html>
+<img src="image.jpg" alt="Description of the image">
+<ol> <li>Item 1</li> <li>Item 2</li> <li>Item 3</li> </ol>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Guessing Game</title>
+</head>
+<body>
+    <h1>Number Guessing Game</h1>
+    <p>Guess a number between 1 and 100:</p>
+    <input type="text" id="guess" placeholder="Enter your guess">
+    <button onclick="checkGuess()">Check</button>
+    <p id="message"></p>
+
+    <script>
+        let randomNumber = Math.floor(Math.random() * 100) + 1;
+        
+        function checkGuess() {
+            let guess = parseInt(document.getElementById("guess").value);
+            if (guess === randomNumber) {
+                document.getElementById("message").innerText = "Congratulations! You guessed the correct number.";
+            } else if (guess < randomNumber) {
+                document.getElementById("message").innerText = "Try a higher number.";
+            } else {
+                document.getElementById("message").innerText = "Try a lower number.";
+            }
+        }
+    </script>
+</body>
+</html>
